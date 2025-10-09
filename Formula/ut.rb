@@ -1,25 +1,25 @@
 class Ut < Formula
   desc "A utility toolkit of most commonly used tools by software developers and IT professionals"
   homepage "https://github.com/ksdme/ut"
-  version "0.2.0"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/ksdme/ut/releases/download/v0.2.0/ut-aarch64-apple-darwin.tar.xz"
-      sha256 "66521a672876a62dc94e5be0a7f85c5119b11c8883d604ef2b4bf790fd26e311"
+      url "https://github.com/ksdme/ut/releases/download/v0.3.0/ut-aarch64-apple-darwin.tar.xz"
+      sha256 "f6f0839fc43424fdb4732c1f5220852a0fd46f797832f9561cc3b1082d2ba4a9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ksdme/ut/releases/download/v0.2.0/ut-x86_64-apple-darwin.tar.xz"
-      sha256 "cd294bd4a376d7d4f365c688072028f33aaf29238855854d509d6a899b10b31d"
+      url "https://github.com/ksdme/ut/releases/download/v0.3.0/ut-x86_64-apple-darwin.tar.xz"
+      sha256 "f55491833db28f49775ac42ad4193befbf0e60ac879812a6c1f1e1ae2ebffeaf"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/ksdme/ut/releases/download/v0.2.0/ut-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "78de913aaa448a0e7ddc8558649e7e0a41350a646c4ef977ad394223607ecd98"
+      url "https://github.com/ksdme/ut/releases/download/v0.3.0/ut-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "57b2d18f7acc713cb51cac4d8be6cb05ca78c4dcf75c7bf08fd9cd77b544e611"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ksdme/ut/releases/download/v0.2.0/ut-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "c04c114d90f31f2f11219790d65de5ad1e2bee746b47ad5b5ad39cc37ba4fae5"
+      url "https://github.com/ksdme/ut/releases/download/v0.3.0/ut-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "d65970281b4063ef7b80ca6c7ed33d17e5a5a762de81bb6dbb1c9d2d128ef382"
     end
   end
 
