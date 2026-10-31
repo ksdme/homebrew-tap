@@ -1,35 +1,35 @@
 class Ut < Formula
   desc "A utility toolkit of most commonly used tools by software developers and IT professionals"
   homepage "https://github.com/ksdme/ut"
-  version "0.6.0"
+  version "0.7.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/ksdme/ut/releases/download/v0.6.0/ut-aarch64-apple-darwin.tar.xz"
-      sha256 "e985246500d3b16905889bcba3a6f4773442cfc325c773a418eadf880d635c67"
+      url "https://github.com/ksdme/ut/releases/download/v0.7.0/ut-aarch64-apple-darwin.tar.xz"
+      sha256 "7b52f3213a4ef22002763530e7bf1d3fd3e32e18cf0e9ea81a3a7342428010d9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ksdme/ut/releases/download/v0.6.0/ut-x86_64-apple-darwin.tar.xz"
-      sha256 "7aa7588ae5e140a5e3f1f77ed5574b94ece3a24635bab78490b500698dcbcde9"
+      url "https://github.com/ksdme/ut/releases/download/v0.7.0/ut-x86_64-apple-darwin.tar.xz"
+      sha256 "2c6c05ab105f05a4a98ea7c32ad46b19f9858432b116cb25246be6c47f1046ef"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/ksdme/ut/releases/download/v0.6.0/ut-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "c8bf5892f288241758bfe03f213034f6d7dd592adf059c1b926f02d5095bdc1b"
+      url "https://github.com/ksdme/ut/releases/download/v0.7.0/ut-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a8a36582567193a891e210afb90aaf67081270339c805489e2a24bcc20c5f3db"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ksdme/ut/releases/download/v0.6.0/ut-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "fa5c44084e05ce777ea3739709a4ef8511396218e0806b5f5c560736db468183"
+      url "https://github.com/ksdme/ut/releases/download/v0.7.0/ut-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "39ec132ef8aff6bf78a5d84e65902ce78c2114ae364f258af42790d561e610a4"
     end
   end
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
+    "aarch64-apple-darwin": {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
-  }.freeze
+    "x86_64-apple-darwin": {},
+    "x86_64-pc-windows-gnu": {},
+    "x86_64-unknown-linux-gnu": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -47,10 +47,18 @@ class Ut < Formula
   end
 
   def install
-    bin.install "ut" if OS.mac? && Hardware::CPU.arm?
-    bin.install "ut" if OS.mac? && Hardware::CPU.intel?
-    bin.install "ut" if OS.linux? && Hardware::CPU.arm?
-    bin.install "ut" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "ut"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "ut"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "ut"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "ut"
+    end
 
     install_binary_aliases!
 
